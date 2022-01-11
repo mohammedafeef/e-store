@@ -55,7 +55,7 @@ const Price = styled.h4`
 const ButtonWrapper = styled.div`
   display: flex;
 `;
-const AddToCartBtn = styled.button`
+const AddToCartBtn = styled.div`
   cursor: pointer;
   display: flex;
   background: transparent;
@@ -81,18 +81,21 @@ export default function ProductCard(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleAddToCart = () => {
+    if (quandity === 0) return;
     if (!user.data.token) return navigate("/user/login");
     dispatch(addToCart(_id));
   };
   return (
     <ProductWrapper>
       <Stock>{quandity > 0 ? `${quandity} left` : "Out of stock"} </Stock>
-      <Image src={imageUrl} />
+      <Image src={imageUrl}/>
       <Name>{name} </Name>
       <Desc>{description}</Desc>
       <Price>₹{price}</Price>
-      <ButtonWrapper onClick={quandity > 0 ? handleAddToCart : null}>
-        <AddToCartBtn disabled={quandity}>Add To cart</AddToCartBtn>
+      <ButtonWrapper>
+        <AddToCartBtn disabled={quandity} onClick={handleAddToCart}>
+          Add To cart
+        </AddToCartBtn>
       </ButtonWrapper>
     </ProductWrapper>
   );

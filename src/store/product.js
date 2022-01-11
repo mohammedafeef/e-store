@@ -10,9 +10,6 @@ const slice = createSlice({
   },
   reducers: {
     productRecived: (product, action) => {
-      // console.log(current(product), action.payload);
-      // const products = [...action.payload];
-      console.log(product, action);
       product.list = action.payload;
     },
   },

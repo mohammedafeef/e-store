@@ -11,6 +11,7 @@ const slice = createSlice({
     itemUpdated: (cart, action) => {
       cart.list = action.payload;
     },
+
     itemAdded: (cart, action) => {
       const itemIndex = cart.list.findIndex(
         (item) => item._id === action.payload._id
@@ -31,11 +32,15 @@ const slice = createSlice({
         cart.list.splice(itemIndex, 1);
       }
     },
+    cartRemoved: (cart, action) => {
+      cart.list = [];
+    },
   },
 });
 
 //actions
-export const { itemAdded, itemRemoved, itemUpdated } = slice.actions;
+export const { itemAdded, itemRemoved, itemUpdated, cartRemoved } =
+  slice.actions;
 
 //reducer
 export default slice.reducer;

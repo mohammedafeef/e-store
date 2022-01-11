@@ -35,21 +35,6 @@ export default function Home() {
   useEffect(() => {
     if (!products?.list?.length) dispatch(loadProducts());
   }, []);
-  // const [products, setProducts] = useState([]);
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     try {
-  //       console.log(BASE_URL);
-  //       const response = await axios.get(`${BASE_URL}/product`);
-  //       console.log(response.data.data);
-  //       setProducts(response.data.data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getProducts();
-  // }, []);
   return (
     <HomeWrapper>
       <Title>Best Deals</Title>

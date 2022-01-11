@@ -26,7 +26,7 @@ const SubmitBtn = styled.button`
   background: transparent;
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
   font-size: 18px;

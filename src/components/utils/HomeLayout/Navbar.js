@@ -4,7 +4,7 @@ import Badge from "@mui/material/Badge";
 import LogoImage from "../../../images/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getCartItemsCount } from "../../../store/cart";
+import { getCartItemsCount, cartRemoved } from "../../../store/cart";
 import { getUser, userSignedOut, userRedirected } from "../../../store/user";
 
 const NavbarWrapper = styled.div`
@@ -63,6 +63,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(userSignedOut());
+    dispatch(cartRemoved());
     dispatch(userRedirected());
     navigate("/home");
   };
