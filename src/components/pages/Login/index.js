@@ -5,7 +5,7 @@ import TextInput from "../../utils/TextInput";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn, getUser } from "../../../store/user";
+import { signIn, getUser, errorReseted } from "../../../store/user";
 import { loadCartItems } from "../../../store/cart";
 
 const Title = styled.h1`
@@ -77,6 +77,11 @@ export default function Login() {
     validationSchema,
     onSubmit: submitHandler,
   });
+  const errorResetHandler = () =>
+    user.error ? dispatch(errorReseted()) : null;
+  useEffect(() => {
+    errorResetHandler();
+  },[]);
   useEffect(() => {
     if (user.redirectTo) {
       dispatch(loadCartItems());
@@ -105,7 +110,9 @@ export default function Login() {
       <SubmitBtn onClick={formik.handleSubmit}>Login</SubmitBtn>
       <RegisterLink>
         Don't have an account?
-        <RouteLink to="/user/register">Register</RouteLink>
+        <RouteLink to="/user/register" onClick={errorResetHandler}>
+          Register
+        </RouteLink>
       </RegisterLink>
     </>
   );

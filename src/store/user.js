@@ -33,6 +33,10 @@ const slice = createSlice({
     errorOccured: (user, action) => {
       user.error = true;
     },
+    errorReseted: (user, action) => {
+      console.log("i am called");
+      user.error = false;
+    },
     userRedirected: (user, action) => {
       user.redirectTo = false;
     },
@@ -45,6 +49,7 @@ export const {
   userSignedOut,
   userSignUp,
   errorOccured,
+  errorReseted,
   userRedirected,
 } = slice.actions;
 
