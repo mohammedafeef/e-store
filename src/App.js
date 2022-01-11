@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import HomeLayout from "./components/utils/HomeLayout";
+import Home from "./components/pages/Home";
+import Cart from "./components/pages/Cart";
+import UserLayout from "./components/utils/UserLayout";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
+import configureStore from "./store/configureStore";
+import { Provider } from "react-redux";
+import PrivateRoute from "./components/utils/PrivateRoute";
 
-function App() {
+export default function App() {
+  const store = configureStore();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/user" element={<UserLayout />}>
+            <Route path="/user" element={<Navigate to="/user/login" />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+          </Route>
+          <Route path="/" element={<HomeLayout />}>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="home" element={<Home />} />
+            <Route
+              path="cart"
+              element={
+                <PrivateRoute>
+                  <Cart />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
-
-export default App;
