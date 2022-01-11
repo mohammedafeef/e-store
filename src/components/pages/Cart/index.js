@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
-import { useSelector, useDispatch } from "react-redux";
-import { getCartItems, getTotalPrice, itemAdded } from "../../../store/cart";
+import { useSelector } from "react-redux";
+import { getCartItems, getTotalPrice } from "../../../store/cart";
 const CartWrapper = styled.div`
   display: flex;
   padding: 30px 150px;

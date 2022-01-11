@@ -70,6 +70,10 @@ const AddBtn = styled(AddIcon)`
   background-color: #39ff14;
   box-shadow: 0px 11px 27px rgba(57, 255, 20, 0.35);
   border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.05);
+  }
   @media screen and (max-width: 450px) {
     font-size: 40px !important;
     padding: 5px;
@@ -84,6 +88,10 @@ const RemoveBtn = styled(RemoveIcon)`
   background-color: #f72119;
   box-shadow: 0px 11px 27px rgba(247, 33, 25, 0.35);
   border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.05);
+  }
   @media screen and (max-width: 450px) {
     font-size: 40px !important;
     padding: 5px;

@@ -45,6 +45,10 @@ const NeoBtn = styled.button`
   background-color: #00c6d7;
   box-shadow: 0px 11px 27px rgba(0, 198, 215, 0.35);
   border-radius: 12px;
+  transition: transform 0.1s ease-in-out;
+  :hover {
+    transform: scale(1.05);
+  }
   @media screen and (max-width: 450px) {
     margin: 0 15px;
     margin-left: 20px;
@@ -55,6 +59,10 @@ const CartIcon = styled(ShoppingCartRoundedIcon)`
   font-size: 30px !important;
   color: black;
   cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 export default function Navbar() {
   const dispatch = useDispatch();
