@@ -32,7 +32,6 @@ const SubmitBtn = styled.button`
   color: white;
   border: none;
   background-color: #3187ed;
-  box-shadow: 0px 11px 27px rgba(49, 135, 237, 0.35);
   border-radius: 12px;
 `;
 const LoginLink = styled.div`
