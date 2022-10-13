@@ -39,6 +39,7 @@ const CheckOutWrapper = styled.div`
   height: fit-content;
   flex-direction: column;
   padding: 20px;
+  margin-bottom: 20px;
   background: #ffffff;
   box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.06);
   border-radius: 30px;

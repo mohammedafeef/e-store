@@ -43,7 +43,6 @@ const NeoBtn = styled.button`
   color: white;
   border: none;
   background-color: #00c6d7;
-  box-shadow: 0px 11px 27px rgba(0, 198, 215, 0.35);
   border-radius: 12px;
   transition: transform 0.1s ease-in-out;
   :hover {

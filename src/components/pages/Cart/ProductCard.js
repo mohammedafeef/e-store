@@ -68,7 +68,7 @@ const AddBtn = styled(AddIcon)`
   color: white;
   border: none;
   background-color: #39ff14;
-  box-shadow: 0px 11px 27px rgba(57, 255, 20, 0.35);
+  box-shadow: 0px 11px 27px rgba(57, 255, 20, 0.2);
   border-radius: 12px;
   transition: transform 0.2s ease-in-out;
   :hover {
@@ -86,7 +86,7 @@ const RemoveBtn = styled(RemoveIcon)`
   color: white;
   border: none;
   background-color: #f72119;
-  box-shadow: 0px 11px 27px rgba(247, 33, 25, 0.35);
+  box-shadow: 0px 11px 27px rgba(247, 33, 25, 0.2);
   border-radius: 12px;
   transition: transform 0.2s ease-in-out;
   :hover {
